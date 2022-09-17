@@ -39,7 +39,23 @@ const SignUp = ({navigation}) => {
           };
         });
 
-        setAreas(areaData);
+        const sortData = areaData.sort((a, b) => {
+          let val = 0;
+          if (a.name < b.name) {
+            val = -1;
+          } else if (a.name > b.name) {
+            val = 1;
+          }
+          return val;
+        });
+
+        console.log('sorted data', sortData);
+
+        sortData.forEach(element => {
+          console.log(element.name);
+        });
+
+        setAreas(sortData);
 
         if (areaData.length > 0) {
           let defaultData = areaData.filter(a => a.code == 'US');
