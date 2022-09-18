@@ -266,7 +266,7 @@ const SignUp = ({navigation}) => {
             alignItems: 'center',
             justifyContent: 'center',
           }}
-          onPress={() => navigation.navigate('Tabs')}>
+          onPress={() => navigation.navigate('Menu')}>
           <Text style={{color: COLORS.white, ...FONTS.h3}}>Continue</Text>
         </TouchableOpacity>
       </View>

@@ -50,7 +50,11 @@ const App = () => {
           component={SignUp}
           options={{title: 'Welcome', headerShown: false}}
         />
-        <Stack.Screen name="Tabs" component={Tabs} />
+        <Stack.Screen
+          name="Menu"
+          options={{title: 'Welcome', headerShown: false}}
+          component={Tabs}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

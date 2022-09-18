@@ -105,7 +105,7 @@ const Home = () => {
         <View style={{flex: 1}}>
           <Text style={{...FONTS.h1}}>Hello!</Text>
           <Text style={{...FONTS.body2, color: COLORS.gray}}>
-            ByProgrammers
+            User1
           </Text>
         </View>
 
@@ -213,7 +213,7 @@ const Home = () => {
         renderItem={renderItem}
         style={{marginTop: SIZES.padding * 2}}
       />
-    );;
+    );
   }
 
   function renderPromos() {
