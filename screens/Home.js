@@ -129,8 +129,8 @@ const Home = () => {
             <View
               style={{
                 position: 'absolute',
-                top: -5,
-                right: -5,
+                top: 4,
+                right: 3,
                 height: 10,
                 width: 10,
                 backgroundColor: COLORS.red,
@@ -224,7 +224,7 @@ const Home = () => {
         {renderFeatures()}
         {renderPromoHeader()}
       </View>
-    );;
+    );
 
     const renderPromoHeader = () => (
       <View
