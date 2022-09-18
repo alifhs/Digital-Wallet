@@ -49,11 +49,11 @@ const SignUp = ({navigation}) => {
           return val;
         });
 
-        console.log('sorted data', sortData);
+        // console.log('sorted data', sortData);
 
-        sortData.forEach(element => {
-          console.log(element.name);
-        });
+        // sortData.forEach(element => {
+        //   console.log(element.name);
+        // });
 
         setAreas(sortData);
 
@@ -266,7 +266,7 @@ const SignUp = ({navigation}) => {
             alignItems: 'center',
             justifyContent: 'center',
           }}
-          onPress={() => navigation.navigate('Home')}>
+          onPress={() => navigation.navigate('Tabs')}>
           <Text style={{color: COLORS.white, ...FONTS.h3}}>Continue</Text>
         </TouchableOpacity>
       </View>

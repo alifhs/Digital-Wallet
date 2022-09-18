@@ -5,7 +5,7 @@ import {
   Text,
   Image,
   FlatList,
-  TouchableOpacity,,
+  TouchableOpacity,
 } from 'react-native';;
 import {COLORS, SIZES, FONTS, icons, images} from '../constants';;
 
@@ -16,56 +16,56 @@ const Home = () => {
       icon: icons.reload,
       color: COLORS.purple,
       backgroundColor: COLORS.lightpurple,
-      description: 'Top Up',,
+      description: 'Top Up',
     },
     {
       id: 2,
       icon: icons.send,
       color: COLORS.yellow,
       backgroundColor: COLORS.lightyellow,
-      description: 'Transfer',,
+      description: 'Transfer',
     },
     {
       id: 3,
       icon: icons.internet,
       color: COLORS.primary,
       backgroundColor: COLORS.lightGreen,
-      description: 'Internet',,
+      description: 'Internet',
     },
     {
       id: 4,
       icon: icons.wallet,
       color: COLORS.red,
       backgroundColor: COLORS.lightRed,
-      description: 'Wallet',,
+      description: 'Wallet',
     },
     {
       id: 5,
       icon: icons.bill,
       color: COLORS.yellow,
       backgroundColor: COLORS.lightyellow,
-      description: 'Bill',,
+      description: 'Bill',
     },
     {
       id: 6,
       icon: icons.game,
       color: COLORS.primary,
       backgroundColor: COLORS.lightGreen,
-      description: 'Games',,
+      description: 'Games',
     },
     {
       id: 7,
       icon: icons.phone,
       color: COLORS.red,
       backgroundColor: COLORS.lightRed,
-      description: 'Mobile Prepaid',,
+      description: 'Mobile Prepaid',
     },
     {
       id: 8,
       icon: icons.more,
       color: COLORS.purple,
       backgroundColor: COLORS.lightpurple,
-      description: 'More',,
+      description: 'More',
     },
   ];;
 
@@ -74,30 +74,30 @@ const Home = () => {
       id: 1,
       img: images.promoBanner,
       title: 'Bonus Cashback1',
-      description: "Don't miss it. Grab it now!",,
+      description: "Don't miss it. Grab it now!",
     },
     {
       id: 2,
       img: images.promoBanner,
       title: 'Bonus Cashback2',
-      description: "Don't miss it. Grab it now!",,
+      description: "Don't miss it. Grab it now!",
     },
     {
       id: 3,
       img: images.promoBanner,
       title: 'Bonus Cashback3',
-      description: "Don't miss it. Grab it now!",,
+      description: "Don't miss it. Grab it now!",
     },
     {
       id: 4,
       img: images.promoBanner,
       title: 'Bonus Cashback4',
-      description: "Don't miss it. Grab it now!",,
+      description: "Don't miss it. Grab it now!",
     },
   ];;
 
-  const [features, setFeatures] = React.useState(featuresData);;
-  const [specialPromos, setSpecialPromos] = React.useState(specialPromoData);;
+  const [features, setFeatures] = React.useState(featuresData);
+  const [specialPromos, setSpecialPromos] = React.useState(specialPromoData);
 
   function renderHeader() {
     return (
@@ -116,14 +116,14 @@ const Home = () => {
               width: 40,
               justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: COLORS.lightGray,,
+              backgroundColor: COLORS.lightGray,
             }}>
             <Image
               source={icons.bell}
               style={{
                 width: 20,
                 height: 20,
-                tintColor: COLORS.secondary,,
+                tintColor: COLORS.secondary,
               }}
             />
             <View
@@ -134,7 +134,7 @@ const Home = () => {
                 height: 10,
                 width: 10,
                 backgroundColor: COLORS.red,
-                borderRadius: 5,,
+                borderRadius: 5,
               }}></View>
           </TouchableOpacity>
         </View>
@@ -155,7 +155,7 @@ const Home = () => {
           style={{
             width: '100%',
             height: '100%',
-            borderRadius: 20,,
+            borderRadius: 20,
           }}
         />
       </View>
@@ -185,7 +185,7 @@ const Home = () => {
             borderRadius: 20,
             backgroundColor: item.backgroundColor,
             alignItems: 'center',
-            justifyContent: 'center',,
+            justifyContent: 'center',
           }}>
           <Image
             source={item.icon}
@@ -193,7 +193,7 @@ const Home = () => {
             style={{
               height: 20,
               width: 20,
-              tintColor: item.color,,
+              tintColor: item.color,
             }}
           />
         </View>
@@ -230,7 +230,7 @@ const Home = () => {
       <View
         style={{
           flexDirection: 'row',
-          marginBottom: SIZES.padding,,
+          marginBottom: SIZES.padding,
         }}>
         <View style={{flex: 1}}>
           <Text style={{...FONTS.h3}}>Special Promos</Text>
@@ -245,7 +245,7 @@ const Home = () => {
       <TouchableOpacity
         style={{
           marginVertical: SIZES.base,
-          width: SIZES.width / 2.5,,
+          width: SIZES.width / 2.5,
         }}
         onPress={() => console.log(item.title)}>
         <View
@@ -253,7 +253,7 @@ const Home = () => {
             height: 80,
             borderTopLeftRadius: 20,
             borderTopRightRadius: 20,
-            backgroundColor: COLORS.primary,,
+            backgroundColor: COLORS.primary,
           }}>
           <Image
             source={images.promoBanner}
@@ -262,7 +262,7 @@ const Home = () => {
               width: '100%',
               height: '100%',
               borderTopLeftRadius: 20,
-              borderTopRightRadius: 20,,
+              borderTopRightRadius: 20,
             }}
           />
         </View>
@@ -272,7 +272,7 @@ const Home = () => {
             padding: SIZES.padding,
             backgroundColor: COLORS.lightGray,
             borderBottomLeftRadius: 20,
-            borderBottomRightRadius: 20,,
+            borderBottomRightRadius: 20,
           }}>
           <Text style={{...FONTS.h4}}>{item.title}</Text>
           <Text style={{...FONTS.body4}}>{item.description}</Text>
