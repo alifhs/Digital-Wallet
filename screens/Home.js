@@ -6,8 +6,8 @@ import {
   Image,
   FlatList,
   TouchableOpacity,
-} from 'react-native';;
-import {COLORS, SIZES, FONTS, icons, images} from '../constants';;
+} from 'react-native';
+import {COLORS, SIZES, FONTS, icons, images} from '../constants';
 
 const Home = () => {
   const featuresData = [
@@ -67,7 +67,7 @@ const Home = () => {
       backgroundColor: COLORS.lightpurple,
       description: 'More',
     },
-  ];;
+  ];
 
   const specialPromoData = [
     {
@@ -94,7 +94,7 @@ const Home = () => {
       title: 'Bonus Cashback4',
       description: "Don't miss it. Grab it now!",
     },
-  ];;
+  ];
 
   const [features, setFeatures] = React.useState(featuresData);
   const [specialPromos, setSpecialPromos] = React.useState(specialPromoData);
@@ -104,9 +104,7 @@ const Home = () => {
       <View style={{flexDirection: 'row', marginVertical: SIZES.padding * 2}}>
         <View style={{flex: 1}}>
           <Text style={{...FONTS.h1}}>Hello!</Text>
-          <Text style={{...FONTS.body2, color: COLORS.gray}}>
-            User1
-          </Text>
+          <Text style={{...FONTS.body2, color: COLORS.gray}}>User1</Text>
         </View>
 
         <View style={{alignItems: 'center', justifyContent: 'center'}}>
@@ -135,11 +133,12 @@ const Home = () => {
                 width: 10,
                 backgroundColor: COLORS.red,
                 borderRadius: 5,
-              }}></View>
+              }}
+            />
           </TouchableOpacity>
         </View>
       </View>
-    );;
+    );
   }
 
   function renderBanner() {
@@ -159,7 +158,7 @@ const Home = () => {
           }}
         />
       </View>
-    );;
+    );
   }
 
   function renderFeatures() {
@@ -167,7 +166,7 @@ const Home = () => {
       <View style={{marginBottom: SIZES.padding * 2}}>
         <Text style={{...FONTS.h3}}>Features</Text>
       </View>
-    );;
+    );
 
     const renderItem = ({item}) => (
       <TouchableOpacity
@@ -201,7 +200,7 @@ const Home = () => {
           {item.description}
         </Text>
       </TouchableOpacity>
-    );;
+    );
 
     return (
       <FlatList
@@ -239,7 +238,7 @@ const Home = () => {
           <Text style={{color: COLORS.gray, ...FONTS.body4}}>View All</Text>
         </TouchableOpacity>
       </View>
-    );;
+    );
 
     const renderItem = ({item}) => (
       <TouchableOpacity
@@ -278,7 +277,7 @@ const Home = () => {
           <Text style={{...FONTS.body4}}>{item.description}</Text>
         </View>
       </TouchableOpacity>
-    );;
+    );
 
     return (
       <FlatList
@@ -290,16 +289,16 @@ const Home = () => {
         keyExtractor={item => `${item.id}`}
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}
-        ListFooterComponent={<View style={{marginBottom: 80}}></View>}
+        ListFooterComponent={<View style={{marginBottom: 80}} />}
       />
-    );;
+    );
   }
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
       {renderPromos()}
     </SafeAreaView>
-  );;
+  );
 };
 
 export default Home;

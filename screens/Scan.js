@@ -1,9 +1,23 @@
-import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 // import { RNCamera } from 'react-native-camera'
 import {COLORS, FONTS, SIZES, icons, images} from '../constants';
+import {
+  Camera,
+  CameraPermissionStatus,
+  useCameraDevices,
+} from 'react-native-vision-camera';
+// import {useScanBarcodes, BarcodeFormat} from 'vision-camera-code-scanner';
 
 const Scan = ({navigation}) => {
+  const [cameraPermission, setCameraPermission] = useState();
+  const [microphonePermission, setMicrophonePermission] = useState();
+  const [isScanned, setIsScanned] = React.useState(false);
+  const devices = useCameraDevices();
+  const device = devices.back;
+  // const [frameProcessor, barcodes] = useScanBarcodes([
+  //   BarcodeFormat.ALL_FORMATS, // You can only specify a particular format
+  // ]);
   function renderHeader() {
     return (
       <View
@@ -56,6 +70,15 @@ const Scan = ({navigation}) => {
         </TouchableOpacity>
       </View>
     );
+  }
+  useEffect(() => {
+    // Camera.getCameraPermissionStatus().then(setCameraPermission);
+    // Camera.getMicrophonePermissionStatus().then(setMicrophonePermission);
+    getPerm();
+  }, []);
+
+  async function getPerm() {
+    const newCameraPermission = await Camera.requestCameraPermission();
   }
 
   function renderScanFocus() {
@@ -192,11 +215,34 @@ const Scan = ({navigation}) => {
         {renderScanFocus()}
         {renderPaymentMethods()}
       </RNCamera> */}
+      {/* <Camera  device={device} isActive={true} /> */}
+      {device == null ? (
+        <View>
+          <Text>No camera yet</Text>
+        </View>
+      ) : (
+        <Camera
+          style={StyleSheet.absoluteFill}
+          device={device}
+          isActive={true}
+        />
+      )}
+
       {renderHeader()}
       {renderScanFocus()}
       {renderPaymentMethods()}
     </View>
   );
 };
-
+const styles = StyleSheet.create({
+  rnholeView: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+});
 export default Scan;
